@@ -2,7 +2,7 @@ import dat from "dat.gui";
 
 export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
 
-  const gui = new dat.GUI()
+  const gui = new dat.GUI({ autoPlace: true, closed: true })
   const performanceConfig = addPerformanceConfig();
   const bloomConfig = addBloomConfig();
   const cameraConfig = addCameraConfig();
@@ -14,12 +14,12 @@ export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
   function addPerformanceConfig() {
     const performanceConfig = {
       resolution: 1.0,
-      quality: 'medium'
+      quality: 'low'
     }
     const perfFolder = gui.addFolder('Performance');
     perfFolder.add(performanceConfig, 'resolution', [0.25, 0.5, 1.0, 2.0, 4.0]);
     perfFolder.add(performanceConfig, 'quality', ['low', 'medium', 'high']).onChange(changePerformanceQuality);
-    perfFolder.open();
+    // perfFolder.open();
 
     return performanceConfig;
   }
@@ -41,7 +41,7 @@ export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
 
   function addCameraConfig() {
     const cameraConfig = {
-      distance: 10,
+      distance: 6,
       orbit: true,
       fov: 90.0
     }
@@ -49,7 +49,7 @@ export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
     observerFolder.add(cameraConfig, 'distance', 2, 14)
     observerFolder.add(cameraConfig, 'fov', 30, 90)
     observerFolder.add(cameraConfig, 'orbit')
-    observerFolder.open()
+    // observerFolder.open()
     return cameraConfig
   }
 
@@ -67,7 +67,7 @@ export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
     effectFolder.add(effectConfig, 'beaming')
     effectFolder.add(effectConfig, 'accretion_disk')
     effectFolder.add(effectConfig, 'use_disk_texture')
-    effectFolder.open()
+    // effectFolder.open()
     return effectConfig;
   }
 

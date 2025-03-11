@@ -88,7 +88,7 @@ export async function createShaderProjectionPlane(uniforms) {
     throw new Error('Error reading vertex shader!');
   }
 
-  const defines = getShaderDefineConstant('medium');
+  const defines = getShaderDefineConstant('low');
   const material = new THREE.ShaderMaterial({
     uniforms: uniforms,
     vertexShader,

@@ -1,7 +1,7 @@
 /* globals THREE dat Stats Observer*/
 import * as THREE from 'three';
 import { createCamera, createRenderer, createScene, createShaderProjectionPlane, loadTextures } from './graphics/render';
-import { createStatsGUI } from './gui/statsGUI';
+// import { createStatsGUI } from './gui/statsGUI';
 import { createConfigGUI } from './gui/datGUI';
 
 
@@ -48,8 +48,11 @@ scene.add(observer)
 
 // GUI
 const { cameraConfig, effectConfig, performanceConfig, bloomConfig } = createConfigGUI(changePerformanceQuality, saveToScreenshot);
-const stats = createStatsGUI();
-document.body.appendChild(stats.dom);
+// const stats = createStatsGUI();
+// document.body.appendChild(stats.dom);
+
+// Set initial camera distance
+observer.distance = 6;
 
 // start loop
 update();
@@ -61,7 +64,7 @@ function update() {
   time += delta
 
   // update peripherals
-  stats.update()
+  // stats.update()
   // window size
   renderer.setPixelRatio(window.devicePixelRatio * performanceConfig.resolution)
   renderer.setSize(window.innerWidth, window.innerHeight)
