@@ -11,6 +11,10 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    emptyOutDir: true
+    emptyOutDir: true,
+    rollupOptions: {
+      // Make sure to bundle all dependencies including three.js
+      external: []
+    }
   }
 });
