@@ -13,8 +13,8 @@ export default defineConfig({
     assetsDir: 'assets',
     emptyOutDir: true,
     rollupOptions: {
-      // Make sure to bundle all dependencies including three.js
-      external: []
+      // Treat three.js as external since we're using the import map
+      external: ['three', 'three/*']
     }
   }
 });
