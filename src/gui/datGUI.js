@@ -26,7 +26,7 @@ export function createConfigGUI(changePerformanceQuality, saveScreenshot) {
 
   function addBloomConfig() {
     const bloomConfig = {
-      strength: 0.7,
+      strength: 0.55,
       radius: 0.5,
       threshold: 0.7
     };
