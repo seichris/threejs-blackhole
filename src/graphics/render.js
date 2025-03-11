@@ -7,6 +7,7 @@ import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPa
 import { CameraDragControls } from "../camera/CameraDragControls";
 import { Observer } from "../camera/Observer";
 import { Vector2 } from 'three/src/math/Vector2';
+import fragmentShader from './fragmentShader.glsl?raw';
 import starUrl from '../../assets/star_noise.png';
 import milkywayUrl from '../../assets/milkyway.jpg';
 import diskUrl from '../../assets/accretion_disk.png';
@@ -85,11 +86,6 @@ export async function createShaderProjectionPlane(uniforms) {
   const vertexShader = document.getElementById('vertexShader')?.textContent
   if (!vertexShader) {
     throw new Error('Error reading vertex shader!');
-  }
-
-  const fragmentShader = document.getElementById('fragmentShader')?.textContent
-  if (!fragmentShader) {
-    throw new Error('Error reading fragment shader!');
   }
 
   const defines = getShaderDefineConstant('low');

@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import legacy from '@vitejs/plugin-legacy';
 
 export default defineConfig({
-  base: '/three-js-blackhole/', // Use your GitHub repo name
+  base: '/threejs-blackhole/',
   plugins: [
     legacy({
       targets: ['defaults', 'not IE 11']
